@@ -20,7 +20,8 @@ public class WaitingForMoneyState implements VendingMachineState
     {
         vendingMachine.setInsertedMoney(amount);
 
-        if (amount >= vendingMachine.getSelectedSnack().getPrice())
+        if (vendingMachine.getInsertedMoney()
+                >= vendingMachine.getSelectedSnack().getPrice())
         {
             vendingMachine.setState(new DispensingSnackState(vendingMachine));
         }

@@ -4,7 +4,7 @@ public class Snack
 {
     private final String name;
     private final double price;
-    private final int quantity;
+    private int quantity;
 
     public Snack(String name, double price, int quantity)
     {
@@ -26,5 +26,10 @@ public class Snack
     public int getQuantity()
     {
         return quantity;
+    }
+
+    public void setQuantity(int quantity)
+    {
+        this.quantity = quantity;
     }
 }

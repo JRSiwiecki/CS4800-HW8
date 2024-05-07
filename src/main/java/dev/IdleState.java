@@ -14,6 +14,7 @@ public class IdleState implements VendingMachineState
     {
         vendingMachine.setSelectedSnack(snackName);
         vendingMachine.setState(new WaitingForMoneyState(vendingMachine));
+        System.out.println("Setting selected snack to " + vendingMachine.getSelectedSnack().getName() + ".");
     }
 
     @Override

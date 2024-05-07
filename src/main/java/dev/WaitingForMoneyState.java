@@ -24,6 +24,7 @@ public class WaitingForMoneyState implements VendingMachineState
                 >= vendingMachine.getSelectedSnack().getPrice())
         {
             vendingMachine.setState(new DispensingSnackState(vendingMachine));
+            System.out.println("Payment accepted, currently $" + amount + " in the vending machine.");
         }
 
         else

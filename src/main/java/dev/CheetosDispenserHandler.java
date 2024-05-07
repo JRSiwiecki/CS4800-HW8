@@ -18,9 +18,9 @@ public class CheetosDispenserHandler extends SnackDispenserHandler
             if (selectedSnack.getQuantity() > 0)
             {
                 selectedSnack.setQuantity(selectedSnack.getQuantity() - 1);
-                vendingMachine.setState(new IdleState(vendingMachine));
                 vendingMachine.setInsertedMoney(
                         vendingMachine.getInsertedMoney() - selectedSnack.getPrice());
+                vendingMachine.setState(new IdleState(vendingMachine));
                 return selectedSnack;
             }
 

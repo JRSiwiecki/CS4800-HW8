@@ -2,7 +2,7 @@ package dev;
 
 public interface VendingMachineState
 {
-    void selectSnack();
-    void insertMoney();
-    void dispenseSnack();
+    void selectSnack(String snackName);
+    void insertMoney(double amount);
+    Snack dispenseSnack();
 }

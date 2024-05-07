@@ -12,7 +12,7 @@ public class DispensingSnackState implements VendingMachineState
     @Override
     public void selectSnack(String snackName)
     {
-        System.out.println("ERROR -> Snack already selected, wait for snack to be dispensed.");
+        System.out.println("ERROR -> Snack already selected, wait for snack to be dispensed or payment.");
     }
 
     @Override
@@ -22,11 +22,17 @@ public class DispensingSnackState implements VendingMachineState
     }
 
     @Override
-    public Snack dispenseSnack()
+    public void dispenseSnack()
     {
         Snack snack = vendingMachine.getHandler()
                 .handleRequest(vendingMachine.getSelectedSnack().getName());
-        System.out.println("Dispensing snack " + snack.getName() + ".");
-        return snack;
+
+        if (snack == null)
+        {
+            return;
+        }
+
+        System.out.println("Dispensing snack " + snack.getName() + ", "
+                + vendingMachine.getSelectedSnack().getQuantity() + " left in the machine.");
     }
 }

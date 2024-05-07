@@ -34,9 +34,8 @@ public class WaitingForMoneyState implements VendingMachineState
     }
 
     @Override
-    public Snack dispenseSnack()
+    public void dispenseSnack()
     {
         System.out.println("ERROR -> Insert money first.");
-        return null;
     }
 }

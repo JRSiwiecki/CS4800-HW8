@@ -24,9 +24,8 @@ public class IdleState implements VendingMachineState
     }
 
     @Override
-    public Snack dispenseSnack()
+    public void dispenseSnack()
     {
         System.out.println("ERROR -> Please select a snack first.");
-        return null;
     }
 }

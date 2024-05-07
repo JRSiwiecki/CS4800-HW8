@@ -18,7 +18,7 @@ public class WaitingForMoneyState implements VendingMachineState
     @Override
     public void insertMoney(double amount)
     {
-        vendingMachine.setInsertedMoney(amount);
+        vendingMachine.setInsertedMoney(vendingMachine.getInsertedMoney() + amount);
 
         if (vendingMachine.getInsertedMoney()
                 >= vendingMachine.getSelectedSnack().getPrice())

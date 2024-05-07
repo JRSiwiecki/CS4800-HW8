@@ -30,6 +30,8 @@ public class DispensingSnackState implements VendingMachineState
         {
             selectedSnack.setQuantity(selectedSnack.getQuantity() - 1);
             vendingMachine.setState(new IdleState(vendingMachine));
+            vendingMachine.setInsertedMoney(
+                    vendingMachine.getInsertedMoney() - selectedSnack.getPrice());
             return selectedSnack;
         }
 
